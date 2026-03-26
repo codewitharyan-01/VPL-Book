@@ -7,7 +7,7 @@
 // Get a FREE API key at https://imgbb.com/login → API
 // Replace the value below with your own imgbb API key.
 const IMGBB_API_KEY = "dd2c23b4b58b938a43b8fe9578411bd3"; // ← Replace this
-const WHATSAPP_NUMBER = "919427358184";
+const WHATSAPP_NUMBER = "916353039609";
 // ───────────────────────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", () => {
