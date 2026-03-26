@@ -1,504 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Valand Premiere League Season 2 – 2026. Book your ticket for the biggest cricket celebration by Savaso Juth Limbach Samaj."/>
-  <meta name="theme-color" content="#0e0c09"/>
-  <title>VPL S2 — Valand Premiere League 2026</title>
-  <link rel="manifest" href="manifest.json"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VPL Season 2 – 2026 | Valand Premiere League</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- CURSOR -->
-<div id="cursor"></div>
-<div id="cursorDot"></div>
+  <!-- ─── NOISE OVERLAY ─── -->
+  <div class="noise"></div>
 
-<!-- GRAIN OVERLAY -->
-<div class="grain" aria-hidden="true"></div>
-
-<!-- ═══ NAV ═══ -->
-<nav id="nav">
-  <div class="nav-left">
-    <span class="nav-org">Savaso Juth Limbach Samaj</span>
-  </div>
-  <div class="nav-center">
-    <a class="nav-logo" href="#">VPL</a>
-  </div>
-  <div class="nav-right">
-    <button class="nav-ticket-btn" onclick="openModal()">
-      <span>Get Ticket</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 7h10M7 12h10M7 17h6"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-    </button>
-    <button class="hamburger" id="hamburger">
-      <span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="mobile-nav" id="mobileNav">
-  <a href="#about" onclick="closeMob()">About</a>
-  <a href="#book" onclick="closeMob()">Book</a>
-  <a href="#venue" onclick="closeMob()">Venue</a>
-  <a href="#team" onclick="closeMob()">Team</a>
-  <button onclick="openModal();closeMob()">Get Ticket — ₹20</button>
-</div>
-
-<!-- ═══ HERO ═══ -->
-<section id="hero">
-  <canvas id="heroCanvas"></canvas>
-
-  <div class="hero-inner">
-    <div class="hero-top-line">
-      <span class="hl-rule"></span>
-      <span class="hl-text">21 – 31 March 2026</span>
-      <span class="hl-rule"></span>
-    </div>
-
-    <div class="hero-title-wrap">
-      <div class="ht-side ht-side--left">
-        <span class="ht-serif">The</span>
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-icon">🏏</span>
+        <span class="logo-text">VPL <em>S2</em></span>
       </div>
-      <div class="ht-main">
-        <div class="ht-v">V</div>
-        <div class="ht-brand">
-          <span class="ht-brand-full">VALAND</span>
-          <span class="ht-brand-sub">PREMIERE LEAGUE</span>
-        </div>
-      </div>
-      <div class="ht-side ht-side--right">
-        <span class="ht-s2">S2</span>
-        <span class="ht-year">'26</span>
-      </div>
-    </div>
-
-    <div class="hero-bottom-row">
-      <div class="hb-tag">Youth Cricket Community</div>
-      <button class="hero-cta" onclick="openModal()">
-        <span class="hc-price">₹20</span>
-        <span class="hc-text">Book Lunch Ticket</span>
-        <div class="hc-arrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#organizers">Team</a></li>
+        <li><a href="#location">Venue</a></li>
+        <li><a href="#book" class="nav-cta">🎟 Book Ticket</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
       </button>
-      <div class="hb-org">Savaso Juth Limbach Samaj</div>
     </div>
-  </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#organizers">Team</a>
+      <a href="#location">Venue</a>
+      <a href="#book">🎟 Book Ticket</a>
+    </div>
+  </nav>
 
-  <div class="hero-pitch-line" aria-hidden="true">
-    <span>CRICKET</span>
-    <span>•</span>
-    <span>COMMUNITY</span>
-    <span>•</span>
-    <span>CELEBRATION</span>
-    <span>•</span>
-    <span>CRICKET</span>
-    <span>•</span>
-    <span>COMMUNITY</span>
-    <span>•</span>
-    <span>CELEBRATION</span>
-  </div>
-</section>
+  <!-- ─── HERO ─── -->
+  <header class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="pitch-lines"></div>
+      <div class="stadium-glow glow-left"></div>
+      <div class="stadium-glow glow-right"></div>
+      <div class="floodlight fl-tl"></div>
+      <div class="floodlight fl-tr"></div>
+    </div>
 
-<!-- ═══ SLASH DIVIDER ═══ -->
-<div class="slash-divider" aria-hidden="true">
-  <div class="sd-number">02</div>
-  <div class="sd-label">About The Event</div>
-</div>
+    <div class="hero-content">
+      <p class="hero-org reveal">Savaso Juth Limbach Samaj Presents</p>
+      <h1 class="hero-title reveal delay-1">
+        <span class="vpl">VPL</span>
+        <span class="season">Season <em>2</em></span>
+      </h1>
+      <p class="hero-sub reveal delay-2">Valand Première League &nbsp;·&nbsp; 2026</p>
+      <div class="hero-date reveal delay-3">
+        <span class="date-badge">21 MAR – 31 MAR 2026</span>
+      </div>
+      <p class="hero-tagline reveal delay-4">"The Youth Cricket Community Warmly Welcomes You"</p>
+      <div class="hero-actions reveal delay-5">
+        <a href="#book" class="btn-primary">🎟 Book Lunch Ticket &nbsp;·&nbsp; ₹20</a>
+        <a href="#about" class="btn-ghost">Explore →</a>
+      </div>
+    </div>
 
-<!-- ═══ ABOUT ═══ -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <p class="about-issue">Issue No. 02 / 2026</p>
-        <h2 class="about-headline">
-          Ten Days.<br/>
-          One Ground.<br/>
-          <em>Infinite Glory.</em>
-        </h2>
-        <p class="about-body">
-          The Valand Premiere League returns for its second season — bigger, louder, and more electric than ever. Organized by the Savaso Juth Limbach Samaj, VPL Season 2 brings together our community for 10 days of cricket, camaraderie, and celebration.
-        </p>
-        <div class="about-facts">
-          <div class="af-item">
-            <span class="af-num">10</span>
-            <span class="af-label">Days of Cricket</span>
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- ─── ABOUT ─── -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-tag">About the Tournament</div>
+      <h2 class="section-title">Cricket That <br/><span class="accent">Unites Us</span></h2>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <div class="about-icon">🏆</div>
+          <h3>Season 2</h3>
+          <p>The second edition of Valand Première League, bigger and better than ever, celebrating the spirit of cricket within our community.</p>
+        </div>
+        <div class="about-card reveal delay-1">
+          <div class="about-icon">🤝</div>
+          <h3>Community Spirit</h3>
+          <p>Organized by the youth of Savaso Juth Limbach Samaj, bringing together families, friends, and cricket lovers.</p>
+        </div>
+        <div class="about-card reveal delay-2">
+          <div class="about-icon">🌟</div>
+          <h3>11 Days of Action</h3>
+          <p>Packed with thrilling matches, from 21st to 31st March 2026. Come cheer, play, and be part of the celebration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SCHEDULE BANNER ─── -->
+  <section class="schedule-banner" id="schedule">
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span>🏏 VPL Season 2</span>
+        <span class="dot">●</span>
+        <span>21 March – 31 March 2026</span>
+        <span class="dot">●</span>
+        <span>Savaso Juth Limbach Samaj</span>
+        <span class="dot">●</span>
+        <span>🎟 Lunch Ticket ₹20 Only</span>
+        <span class="dot">●</span>
+        <span>🏏 VPL Season 2</span>
+        <span class="dot">●</span>
+        <span>21 March – 31 March 2026</span>
+        <span class="dot">●</span>
+        <span>Savaso Juth Limbach Samaj</span>
+        <span class="dot">●</span>
+        <span>🎟 Lunch Ticket ₹20 Only</span>
+        <span class="dot">●</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ORGANIZERS ─── -->
+  <section class="section organizers" id="organizers">
+    <div class="container">
+      <div class="section-tag">Meet the Team</div>
+      <h2 class="section-title">Tournament <span class="accent">Organizers</span></h2>
+      <div class="org-grid">
+        <div class="org-card reveal">
+          <div class="org-avatar">UB</div>
+          <div class="org-info">
+            <h4>Umang Bhulasan</h4>
+            <a href="tel:+916353036506">📞 6353036506</a>
           </div>
-          <div class="af-item">
-            <span class="af-num">₹20</span>
-            <span class="af-label">Per Person Lunch</span>
-          </div>
-          <div class="af-item">
-            <span class="af-num">S2</span>
-            <span class="af-label">Season Two</span>
-          </div>
         </div>
-      </div>
-      <div class="about-visual">
-        <div class="av-card av-card--1">
-          <span class="avc-icon">🏏</span>
-          <span class="avc-title">Championship</span>
-          <span class="avc-desc">Full tournament across 10 days</span>
-        </div>
-        <div class="av-card av-card--2">
-          <span class="avc-icon">🍱</span>
-          <span class="avc-title">Community Lunch</span>
-          <span class="avc-desc">Served fresh for every guest</span>
-        </div>
-        <div class="av-card av-card--3">
-          <span class="avc-icon">🏆</span>
-          <span class="avc-title">Grand Final</span>
-          <span class="avc-desc">March 31st — prize ceremony</span>
-        </div>
-        <div class="av-card av-card--4">
-          <span class="avc-icon">👨‍👩‍👧‍👦</span>
-          <span class="avc-title">All Welcome</span>
-          <span class="avc-desc">Families, elders, children</span>
-        </div>
-        <div class="av-deco-num">02</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ TICKET SECTION ═══ -->
-<section id="book" class="section ticket-section">
-  <div class="ts-bg-text" aria-hidden="true">TICKET</div>
-  <div class="container">
-    <div class="ts-header">
-      <div class="ts-tag">Booking Open</div>
-      <h2 class="ts-title">Your Seat Awaits</h2>
-    </div>
-    <div class="ticket-card-wrap">
-      <div class="ticket-card" onclick="openModal()">
-        <div class="tc-left">
-          <div class="tc-event-name">VPL Season 2</div>
-          <div class="tc-date">21 Mar – 31 Mar 2026</div>
-          <div class="tc-org">Savaso Juth Limbach Samaj</div>
-          <div class="tc-includes">
-            <span>✓ Lunch Included</span>
-            <span>✓ Match Entry</span>
-            <span>✓ Community Access</span>
+        <div class="org-card reveal delay-1">
+          <div class="org-avatar">HP</div>
+          <div class="org-info">
+            <h4>Hasmukhbhai Parmar</h4>
+            <a href="tel:+918320196192">📞 8320196192</a>
           </div>
         </div>
-        <div class="tc-tear"></div>
-        <div class="tc-right">
-          <div class="tc-price-label">PER PERSON</div>
-          <div class="tc-price">₹20</div>
-          <button class="tc-buy-btn" onclick="openModal()">
-            Book Now
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-        <div class="tc-barcode" aria-hidden="true">
-          <div class="tcb-lines">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
+        <div class="org-card reveal delay-2">
+          <div class="org-avatar">RP</div>
+          <div class="org-info">
+            <h4>Valand Rajeshbhai Parmar</h4>
+            <a href="tel:+918420439184">📞 8420439184</a>
           </div>
-          <span class="tcb-num">VPL-S2-2026</span>
+        </div>
+        <div class="org-card reveal delay-1">
+          <div class="org-avatar">VP</div>
+          <div class="org-info">
+            <h4>Parmar Vijaybhai</h4>
+            <a href="tel:+918408956018">📞 8408956018</a>
+          </div>
+        </div>
+        <div class="org-card reveal delay-2">
+          <div class="org-avatar">DA</div>
+          <div class="org-info">
+            <h4>Dipakbhai (Anandiyara)</h4>
+            <a href="tel:+91842686948">📞 842686948</a>
+          </div>
+        </div>
+        <div class="org-card reveal">
+          <div class="org-avatar">UH</div>
+          <div class="org-info">
+            <h4>Umang Bhupat (HDFC)</h4>
+            <a href="tel:+916355203040">📞 6355203040</a>
+          </div>
+        </div>
+        <div class="org-card reveal delay-1">
+          <div class="org-avatar">RK</div>
+          <div class="org-info">
+            <h4>Ramesh Kapadiya</h4>
+            <a href="tel:+916353054317">📞 6353054317</a>
+          </div>
+        </div>
+        <div class="org-card reveal delay-2">
+          <div class="org-avatar">KV</div>
+          <div class="org-info">
+            <h4>Keshav Valand</h4>
+            <span class="role-badge">Social Media</span>
+            <a href="tel:+918326367608">📞 8326367608</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ STATS ═══ -->
-<section id="stats" class="section stats-section">
-  <div class="container">
-    <div class="stats-tape" aria-hidden="true">— LIVE STATS —</div>
-    <div class="stats-row">
-      <div class="stat-block">
-        <div class="sb-val" id="statBookings">0</div>
-        <div class="sb-rule"></div>
-        <div class="sb-label">Bookings</div>
-      </div>
-      <div class="stats-divider">×</div>
-      <div class="stat-block">
-        <div class="sb-val" id="statRevenue">₹0</div>
-        <div class="sb-rule"></div>
-        <div class="sb-label">Collected</div>
-      </div>
-      <div class="stats-divider">×</div>
-      <div class="stat-block">
-        <div class="sb-val" id="statPeople">0</div>
-        <div class="sb-rule"></div>
-        <div class="sb-label">Attending</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ VENUE ═══ -->
-<section id="venue" class="section">
-  <div class="slash-divider" style="margin:0 0 64px">
-    <div class="sd-number">04</div>
-    <div class="sd-label">Venue & Location</div>
-  </div>
-  <div class="container">
-    <div class="venue-grid">
-      <div class="venue-info">
-        <h2 class="venue-title">Limbach<br/><em>Village Ground</em></h2>
-        <p class="venue-addr">Savaso Juth Limbach Samaj Ground<br/>Limbach, Gujarat, India</p>
-        <a href="https://maps.app.goo.gl/XBLzC3tL499uUARC7" target="_blank" rel="noopener" class="venue-map-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Open in Google Maps
-        </a>
-        <div class="venue-detail-row">
-          <div class="vdr-item"><span>📅</span> 21 – 31 March 2026</div>
-          <div class="vdr-item"><span>🕙</span> Morning onwards</div>
-          <div class="vdr-item"><span>🎟</span> All ages welcome</div>
+  <!-- ─── VENUE ─── -->
+  <section class="section venue" id="location">
+    <div class="container">
+      <div class="section-tag">Find Us</div>
+      <h2 class="section-title">Match <span class="accent">Venue</span></h2>
+      <div class="venue-card reveal">
+        <div class="venue-info">
+          <div class="venue-icon-wrap">🏟</div>
+          <h3>Cricket Ground</h3>
+          <p>Savaso Juth Limbach Samaj Ground</p>
+          <p class="venue-dates">📅 21 March – 31 March 2026</p>
+          <a href="https://maps.app.goo.gl/XBLzC3tL499uUARC7?g_st=iw" target="_blank" rel="noopener" class="btn-map">
+            📍 Open in Google Maps
+          </a>
         </div>
-      </div>
-      <div class="venue-map-wrap">
-        <iframe
-          src="https://maps.google.com/maps?q=Limbach,+Gujarat&output=embed"
-          width="100%" height="360"
-          style="border:0;"
-          allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Event Location">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ GALLERY ═══ -->
-<section id="gallery" class="section gallery-section">
-  <div class="container">
-    <div class="gallery-header">
-      <h2 class="gallery-title">Moments from<br/><em>the Ground</em></h2>
-      <p class="gallery-sub">Relive the energy of VPL</p>
-    </div>
-    <div class="gallery-mosaic">
-      <div class="gm-item gm-item--tall">
-        <div class="gmi-inner"><span>🏏</span></div>
-        <div class="gmi-label">Opening Match</div>
-      </div>
-      <div class="gm-item">
-        <div class="gmi-inner"><span>🏆</span></div>
-        <div class="gmi-label">Trophy Moment</div>
-      </div>
-      <div class="gm-item">
-        <div class="gmi-inner"><span>🎉</span></div>
-        <div class="gmi-label">Celebration</div>
-      </div>
-      <div class="gm-item gm-item--wide">
-        <div class="gmi-inner"><span>👥</span></div>
-        <div class="gmi-label">Community Together</div>
-      </div>
-      <div class="gm-item">
-        <div class="gmi-inner"><span>⚡</span></div>
-        <div class="gmi-label">Best Plays</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ TEAM ═══ -->
-<section id="team" class="section">
-  <div class="slash-divider" style="margin:0 0 64px">
-    <div class="sd-number">06</div>
-    <div class="sd-label">The Organizers</div>
-  </div>
-  <div class="container">
-    <div class="team-grid">
-      <div class="team-card tc-featured">
-        <div class="tcard-num">01</div>
-        <div class="tcard-av">RV</div>
-        <div class="tcard-body">
-          <h3>Rajeshbhai Valand</h3>
-          <span class="tcard-role">Head Organizer</span>
-          <a href="tel:+919427358184" class="tcard-phone">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.18 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            +91 94273 58184
+        <div class="venue-map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d72.5!3d23.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAwJzAwLjAiTiA3MsKwMzAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <a href="https://maps.app.goo.gl/XBLzC3tL499uUARC7?g_st=iw" target="_blank" class="map-overlay-link">
+            <span>📍 View on Google Maps</span>
           </a>
         </div>
       </div>
-      <div class="team-card">
-        <div class="tcard-num">02</div>
-        <div class="tcard-av small">SJ</div>
-        <div class="tcard-body">
-          <h3>Savaso Juth Samaj</h3>
-          <span class="tcard-role">Co-Organizer</span>
-          <span class="tcard-info">Limbach Samaj Committee</span>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="tcard-num">03</div>
-        <div class="tcard-av small">VC</div>
-        <div class="tcard-body">
-          <h3>VPL Committee</h3>
-          <span class="tcard-role">Cricket Division</span>
-          <span class="tcard-info">Youth Cricket Coordinators</span>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-top">
-    <div class="ft-logo">VPL</div>
-    <div class="ft-tagline">Season 2 · 2026</div>
-  </div>
-  <div class="footer-mid">
-    <div class="fm-rule"></div>
-    <span>Organized by Savaso Juth Limbach Samaj</span>
-    <div class="fm-rule"></div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Valand Premiere League</span>
-    <span>Made with ❤️ for our community</span>
-    <a href="admin/" class="footer-admin-link">⚙</a>
-  </div>
-</footer>
+  <!-- ─── BOOK TICKET ─── -->
+  <section class="section booking" id="book">
+    <div class="container">
+      <div class="section-tag">Lunch Ticket</div>
+      <h2 class="section-title">Book Your <span class="accent">Ticket</span></h2>
+      <p class="booking-sub">Fill in your details below. Each lunch ticket is just <strong>₹20 per person</strong>.</p>
 
-<!-- ═════════════════════════════════════════════
-     BOOKING MODAL
-═════════════════════════════════════════════ -->
-<div class="modal-backdrop" id="modal">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
-    <button class="modal-x" onclick="closeModal()" aria-label="Close">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
+      <div class="booking-wrapper">
 
-    <!-- STEP DOTS -->
-    <div class="modal-steps-indicator">
-      <div class="msi-dot active" id="dot1"></div>
-      <div class="msi-line" id="line12"></div>
-      <div class="msi-dot" id="dot2"></div>
-      <div class="msi-line" id="line23"></div>
-      <div class="msi-dot" id="dot3"></div>
-    </div>
-
-    <!-- STEP 1: DETAILS -->
-    <div class="mstep active" id="mstep1">
-      <div class="mstep-header">
-        <div class="msh-num">01</div>
-        <div>
-          <h2 id="modalHeading">Your Details</h2>
-          <p>VPL Season 2 · Lunch Ticket · ₹20 per person</p>
-        </div>
-      </div>
-
-      <div class="mform">
-        <div class="mf-group">
-          <label>Full Name</label>
-          <input type="text" id="fName" placeholder="Your full name" autocomplete="name"/>
-          <span class="mf-err" id="errName"></span>
-        </div>
-        <div class="mf-group">
-          <label>WhatsApp Number</label>
-          <div class="mf-phone-wrap">
-            <span class="mf-cc">+91</span>
-            <input type="tel" id="fPhone" placeholder="9427358184" maxlength="10"/>
-          </div>
-          <span class="mf-err" id="errPhone"></span>
-        </div>
-        <div class="mf-group">
-          <label>Number of Persons</label>
-          <div class="mf-stepper">
-            <button type="button" onclick="chPer(-1)">−</button>
-            <span id="perCount">1</span>
-            <button type="button" onclick="chPer(1)">+</button>
+        <!-- LEFT: PAYMENT INFO -->
+        <div class="payment-info reveal">
+          <div class="payment-card">
+            <div class="payment-header">
+              <span class="payment-badge">STEP 1 — PAY FIRST</span>
+            </div>
+            <p class="payment-note">Scan the QR code below using any UPI app (Google Pay, PhonePe, Paytm, etc.) and pay the amount based on the number of persons.</p>
+            <div class="qr-wrap">
+              <img src="assets/qr-payment.png" alt="UPI QR Code – Rajeshbhai Valand" class="qr-img" />
+            </div>
+            <div class="upi-name">
+              <span class="upi-label">Pay To</span>
+              <strong>Rajeshbhai Valand</strong>
+            </div>
+            <div class="price-guide">
+              <div class="price-row"><span>1 Person</span><strong>₹20</strong></div>
+              <div class="price-row"><span>2 Persons</span><strong>₹40</strong></div>
+              <div class="price-row"><span>3 Persons</span><strong>₹60</strong></div>
+              <div class="price-row"><span>4 Persons</span><strong>₹80</strong></div>
+              <div class="price-row"><span>5+ Persons</span><strong>₹20 × n</strong></div>
+            </div>
           </div>
         </div>
-        <div class="mf-total-row">
-          <span>Total Amount</span>
-          <span class="mft-val" id="totalDisplay">₹20</span>
+
+        <!-- RIGHT: FORM -->
+        <div class="booking-form-wrap reveal delay-2">
+          <div class="form-card">
+            <div class="form-header">
+              <span class="payment-badge">STEP 2 — FILL &amp; SUBMIT</span>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Full Name <span class="req">*</span></label>
+              <input type="text" id="name" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">WhatsApp / Phone Number <span class="req">*</span></label>
+              <input type="tel" id="phone" placeholder="e.g. 9876543210" maxlength="10" required />
+            </div>
+
+            <div class="form-group">
+              <label for="persons">Number of Persons <span class="req">*</span></label>
+              <div class="counter-wrap">
+                <button type="button" class="counter-btn" id="decreaseBtn">−</button>
+                <span class="counter-val" id="personCount">1</span>
+                <button type="button" class="counter-btn" id="increaseBtn">+</button>
+              </div>
+            </div>
+
+            <div class="amount-display">
+              <span>Total Amount to Pay:</span>
+              <strong id="totalAmount">₹20</strong>
+            </div>
+
+            <div class="form-group">
+              <label for="screenshot">Payment Screenshot <span class="req">*</span></label>
+              <div class="file-upload-wrap" id="fileUploadWrap">
+                <input type="file" id="screenshot" accept="image/*" required />
+                <div class="file-upload-ui" id="fileUploadUI">
+                  <span class="upload-icon">📸</span>
+                  <p>Tap to upload payment screenshot</p>
+                  <span class="upload-hint">JPG, PNG, WEBP supported</span>
+                </div>
+                <div class="file-preview" id="filePreview" style="display:none;">
+                  <img id="previewImg" src="" alt="Payment screenshot preview" />
+                  <button type="button" id="removeFile" class="remove-file">✕ Remove</button>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-book" id="submitBtn">
+              <span id="btnText">✅ Confirm Booking via WhatsApp</span>
+              <div class="btn-loader" id="btnLoader" style="display:none;"></div>
+            </button>
+
+            <p class="form-disclaimer">Your booking details + payment screenshot will be sent directly to the organizer on WhatsApp for confirmation.</p>
+          </div>
         </div>
-        <button class="mf-next-btn" onclick="toPayment()">
-          Continue to Payment
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+
       </div>
     </div>
+  </section>
 
-    <!-- STEP 2: PAYMENT -->
-    <div class="mstep" id="mstep2">
-      <div class="mstep-header">
-        <div class="msh-num">02</div>
-        <div>
-          <h2>Scan & Pay</h2>
-          <p>Pay via any UPI app, then upload screenshot</p>
-        </div>
-      </div>
-
-      <div class="pay-layout">
-        <div class="pay-qr-wrap">
-          <img src="assets/qr.png" alt="UPI Payment QR" id="qrImg"/>
-          <div class="pay-qr-badge">Scan with any UPI App</div>
-        </div>
-        <div class="pay-info-col">
-          <div class="pay-to">
-            <span class="pto-label">Pay to</span>
-            <span class="pto-name">Rajeshbhai Valand</span>
-          </div>
-          <div class="pay-amount-big" id="payBigAmt">₹20</div>
-          <div class="pay-steps-mini">
-            <div><span>1</span> Open GPay / PhonePe / Paytm</div>
-            <div><span>2</span> Scan the QR code</div>
-            <div><span>3</span> Pay exact amount</div>
-            <div><span>4</span> Screenshot confirmation</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mf-group" style="margin-top:20px">
-        <label>Upload Payment Screenshot</label>
-        <div class="upload-drop" id="uploadDrop" onclick="document.getElementById('fileIn').click()">
-          <div class="ud-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/></svg>
-          </div>
-          <span id="udText">Drop screenshot here or click to browse</span>
-          <span class="ud-hint">PNG / JPG · max 5MB</span>
-        </div>
-        <input type="file" id="fileIn" accept="image/*" style="display:none" onchange="handleFile(event)"/>
-        <div id="uploadPrev"></div>
-        <span class="mf-err" id="errUpload"></span>
-      </div>
-
-      <div class="mstep-btns">
-        <button class="msb-back" onclick="toStep(1)">← Back</button>
-        <button class="msb-confirm" id="confirmBtn" onclick="submitBooking()">Confirm Booking</button>
-      </div>
-    </div>
-
-    <!-- STEP 3: SUCCESS -->
-    <div class="mstep" id="mstep3">
-      <canvas id="confCanvas"></canvas>
-      <div class="success-wrap">
-        <div class="success-icon-ring" id="successRing">
-          <svg viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="46" stroke="var(--gold)" stroke-width="3" stroke-dasharray="289" stroke-dashoffset="289" class="sring-circle"/>
-            <polyline points="30,52 44,66 70,36" stroke="var(--gold)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="60" stroke-dashoffset="60" class="sring-check"/>
-          </svg>
-        </div> 
-        <h2 class="success-h">You're In!</h2>
-        <p class="success-p">Booking Confirmed 🏏</p>
-        <div class="success-ticket" id="successTicket"></div>
-        <div class="success-actions">
-          <button class="msb-confirm" id="waBtn">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Send via WhatsApp
-          </button>
-          <button class="msb-back" onclick="closeModal()">Done</button>
-        </div>
-      </div>
+  <!-- ─── SUCCESS MODAL ─── -->
+  <div class="modal-overlay" id="successModal" style="display:none;">
+    <div class="modal-box">
+      <div class="modal-icon">🎉</div>
+      <h3>Booking Sent!</h3>
+      <p>Your WhatsApp message has been prepared with all booking details. Confirm and send it to complete your booking!</p>
+      <button class="btn-primary" id="closeModal">Done</button>
     </div>
   </div>
-</div>
 
-<!-- TOAST -->
-<div id="toast" class="toast"></div>
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">🏏 VPL Season 2</div>
+      <p class="footer-org">Savaso Juth Limbach Samaj</p>
+      <p class="footer-dates">21 March – 31 March · 2026</p>
+      <div class="footer-links">
+        <a href="#book">Book Ticket</a>
+        <a href="#location">Venue</a>
+        <a href="#organizers">Organizers</a>
+      </div>
+      <p class="footer-credit">Made with ❤️ for the VPL Community</p>
+    </div>
+  </footer>
 
-<script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
