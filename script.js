@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const total = persons * 20;
     const lines = [
       "🏏 *VPL Season 2 – 2026*",
-      "🎟 *Dinner TICKET BOOKING*",
+      "🎟 *DINNER TICKET BOOKING*",
       "━━━━━━━━━━━━━━━━━━━━",
       `👤 *Name:* ${name}`,
       `📱 *Phone:* ${phone}`,
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "━━━━━━━━━━━━━━━━━━━━",
       `🖼 *Payment Screenshot:* ${imageUrl}`,
       "━━━━━━━━━━━━━━━━━━━━",
-      "📅 Dinner On: 31 March 2026,7.00 PM ",
+      "📅 Dinner Details: 31 March 2026, 07.00 PM ",
       "🏟 Savaso Juth Limbach Samaj",
       "",
       "_Please confirm this booking. Thank you!_ 🙏"
